@@ -46,3 +46,21 @@ The project is a work in progress and is not yet complete.
 - [ ] User following
 - [ ] User feed (posts from users you follow)
 - [ ] User flair
+
+In general I felt the assignment went well. I worked through the task slowly but methodically, this allowed me to work through the errors and deploy with minimal issues.
+
+Some of the changes I made:
+
+- Change of the localhost in the github app to point to Vercel as I realised that logging in using Github took me to the localhost URL rather than the Vercel
+- Updated the schema.sql to include DROP TABLE IF EXISTS and fix the additional comma.
+- I realised quite early on I needed to add in the Environment Variables into Vercel so this didn't cause an issue
+- Ran the npm install @auth/pg-adapter pg
+
+My first Vercel build I hadn't pushed my changes to Github, but again I quickly worked this out, pushing the updated version meant this worked correctly
+
+I started to work on the metadata stretch goal but ended up looking through the issue with Vercel with Darren and Isaac in that after entering 4 posts there was a 504 error
+
+To get to page working I cleared the data from the SQL tables.
+
+VERCEL LINK: https://didit-reddit-upvote-example-psi.vercel.app/
+GITHUB LINK: https://github.com/nicklormanhall/didit-reddit-upvote-example

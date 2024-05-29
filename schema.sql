@@ -1,4 +1,13 @@
 -- Next Auth standard tables, see https://authjs.dev/reference/adapter/pg#setup
+
+DROP TABLE IF EXISTS verification_token CASCADE;
+DROP TABLE IF EXISTS accounts CASCADE;
+DROP TABLE IF EXISTS sessions CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS posts CASCADE;
+DROP TABLE IF EXISTS comments CASCADE;
+DROP TABLE IF EXISTS votes CASCADE;
+
 CREATE TABLE verification_token
 (
   identifier TEXT NOT NULL,
@@ -75,6 +84,6 @@ CREATE TABLE votes (
     post_id INT NULL REFERENCES posts(id),
     vote SMALLINT CHECK (vote IN (-1, 1)),
     vote_type VARCHAR(255) CHECK (vote_type IN ('post', 'comment')),
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     -- UNIQUE(user_id, post_id, vote_type)
 );
